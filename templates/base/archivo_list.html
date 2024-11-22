@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+    {% block body_block %}
+        <h1 class="mt-4">Contenido del archivo</h1>
+        {% if archivo %}
+            <div class="bg-body-tertiary p-3 rounded-2 overflow-y-auto mt-4" style="max-height: 300px;">
+                <p class="card-text">{{ contenido }}</p>
+            </div>
+            <h1 class="mt-4">Análisis del archivo</h1>
+            <div class="card mt-4">
+                <div class="card-header">
+                Output
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Detección de Sentimiento</h5>
+                    <p class="card-text mt-3">Sentimiento general: {{ reporte_sentimiento.sentimiento_general }}</p>
+                    <p class="card-text">Palabras positivas: {{ reporte_sentimiento.palabras_positivas }}</p>
+                    {% if reporte_sentimiento.palabra_mas_positiva %}
+                        <p class="card-text">Palabra más positiva: {{ reporte_sentimiento.palabra_mas_positiva.0 }}, +{{ reporte_sentimiento.palabra_mas_positiva.1 }}</p>
+                    {% endif %}
+                    <p class="card-text">Palabras negativas: {{ reporte_sentimiento.palabras_negativas }}</p>
+                    {% if reporte_sentimiento.palabra_mas_negativa %}
+                        <p class="card-text">Palabra más negativa: {{ reporte_sentimiento.palabra_mas_negativa.0 }}, {{ reporte_sentimiento.palabra_mas_negativa.1 }}</p>
+                    {% endif %}
+                    <h5 class="card-title">Verificación del Protocolo de Atención</h5>
+                    <p class="card-text mt-3">Fase de saludo: {{ reporte_protocolo.saludo }}</p>
+                    <p class="card-text">Fase de identificación del cliente: {{ reporte_protocolo.identificacion_cliente }}</p>
+                    <p class="card-text">Uso de palabras rudas: {{ reporte_protocolo.palabras_no_permitidas }}</p>
+                    <p class="card-text">Fase de despedida: {{ reporte_protocolo.despedida }}</p>
+                </div>
+            </div>
+        {% else %}
+            <p class="mt-4">Todavía no se ha adjuntado ningún archivo. ¡Sube uno para empezar!</p>
+        {% endif %}
+        <a href="{% url 'base:archivo_create' %}" class="btn btn-primary mt-4 mb-4">Volver</a>
+    {% endblock %}

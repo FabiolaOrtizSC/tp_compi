@@ -1,0 +1,49 @@
+lexema,token,ponderacion
+hola,saludo,0
+buenos días,saludo,0
+buenas tardes,saludo,0
+buenas noches,saludo,0
+un placer saludarte,saludo,0
+cómo estás,saludo,0
+cómo te va,saludo,0
+encantado de saludarte,saludo,0
+bienvenido,saludo,0
+cómo puedo ayudarte hoy,saludo,0
+adiós,despedida,0
+hasta luego,despedida,0
+nos vemos,despedida,0
+gracias por su tiempo,despedida,0
+que tenga un buen día,despedida,0
+con quién tengo el gusto de hablar,identificacion_cliente,0
+cómo te llamas,identificacion_cliente,0
+puedo saber tu nombre,identificacion_cliente,0
+bueno,bueno,1
+genial,bueno,1
+agradable,bueno,1
+por favor,amable,2
+disculpa,amable,2
+perdón,amable,2
+con gusto,amable,2
+a la orden,amable,2
+dificultad,problema,-1
+complicación,problema,-1
+obstáculo,problema,-1
+error,problema,-1
+fallo,problema,-1
+pésimo,mal,-2
+horrible,mal,-2
+terrible,mal,-2
+desagradable,mal,-2
+deficiente,mal,-2
+excelente,excelente,3
+impresionante,excelente,3
+maravilloso,excelente,3
+fantástico,excelente,3
+perfecto,excelente,3
+asombroso,excelente,3
+increíble,excelente,3
+maravilla,excelente,3
+estupendo,excelente,3
+malo,mal,-2
+pésima,mal,-2
+decepcionante,mal,-2

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+    {% block body_block %}
+        <h1 class="mt-4">Lexemas registrados</h1>
+        <div class="overflow-y-auto mt-4" style="max-height: 380px;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-4">Lexema</th>
+                        <th class="col-4">Token</th>
+                        <th class="col-4">Ponderación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for lexema in lexemas %}
+                        <tr>
+                            <td class="col-4">{{ lexema.lexema }}</td>
+                            <td class="col-4">{{ lexema.get_token_display }}</td>
+                            <td class="col-4">{{ lexema.ponderacion }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="{% url 'base:lexema_create' %}" class="btn btn-primary mt-4 mb-4">Añadir nuevo lexema</a>
+    {% endblock %}

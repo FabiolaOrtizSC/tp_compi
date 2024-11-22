@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+    {% block body_block %}
+        <h1 class="mt-4 mb-4">Sube tu archivo de texto</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group mb-4">
+                {{ form.archivo }}
+            </div>
+            <button type="submit" class="btn btn-primary">Analizar archivo</button>
+        </form>
+    {% endblock %}
